@@ -1,0 +1,12 @@
+<form method="POST">
+    {% csrf_token %}
+    <input name="url" placeholder="URL" value="{{ url }}">
+    <input type="submit" value="Crawl">
+</form>
+
+{% if result %}
+<h1>Results</h1>
+<ul>
+    <li>{% include 'results-snippet.html' with result=result %}</li>
+</ul>
+{% endif %}

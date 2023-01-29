@@ -1,0 +1,15 @@
+<a href="{{ result.url }}">{{ result.url }}</a>
+
+{% if result.has_exception %}
+
+    <pre>{{ result.format_exception }}</pre>
+
+{% else %}
+
+    <ul>
+        {% for subresult in result.children %}
+        <li>{% include 'results-snippet.html' with result=subresult %}</li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
