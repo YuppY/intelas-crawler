@@ -1,7 +1,7 @@
 <form method="POST">
     {% csrf_token %}
     <input name="url" placeholder="URL" value="{{ url }}">
-    <input type="submit" value="Crawl">
+    <input type="submit" value="go">
 </form>
 
 {% if result %}
